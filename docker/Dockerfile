@@ -1,5 +1,4 @@
 FROM debian:stable
-COPY docker/sources.list /etc/apt/sources.list
 RUN set -ex \
     && echo "deb http://mirrors.aliyun.com/debian/ buster main non-free contrib" > /etc/apt/sources.list \
     && echo "deb-src http://mirrors.aliyun.com/debian/ buster main non-free contrib" > /etc/apt/sources.list \
