@@ -13,7 +13,8 @@ RUN set -ex \
     && apt-get install -y wget \
     && apt install -y libglib2.0-0 \
     && apt install -y libatomic1 \
-    && wget ftp://10.28.40.62/mydumper/mydumper_0.11.3-1-zstd-80.$(env -i bash -c '. /etc/os-release; echo $VERSION_CODENAME')_amd64.deb \
+    && wget https://github.com/maxbube/mydumper/releases/download/v0.11.3/mydumper_0.11.3-1-zstd-80.$(env -i bash -c '. /etc/os-release; echo $VERSION_CODENAME')_amd64.deb \
+#    && wget ftp://10.28.40.62/mydumper/mydumper_0.11.3-1-zstd-80.$(env -i bash -c '. /etc/os-release; echo $VERSION_CODENAME')_amd64.deb \
     && dpkg -i mydumper_0.11.3-1-zstd-80.$(env -i bash -c '. /etc/os-release; echo $VERSION_CODENAME')_amd64.deb \
     && rm -rf  mydumper_0.11.3-1-zstd-80.$(env -i bash -c '. /etc/os-release; echo $VERSION_CODENAME')_amd64.deb \
     && ldd /usr/bin/mydumper \
